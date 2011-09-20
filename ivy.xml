@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+	<info organisation="ojug" module="scala"/>
+
+  <configurations>
+    <conf name="default" description="core dependencies needed at compile-time and runtime"/>
+    <conf name="buildtime" visibility="private" description="additional dependencies needed only at build time"/>
+    <conf name="test" visibility="private" description="additional dependencies needed only for testing"/>
+    <conf name="sources" description="source artifacts"/>
+  </configurations>
+
+  <dependencies defaultconfmapping="sources->sources();%->default" defaultconf="default;sources">
+    <dependency org="org.scalatest" name="scalatest_2.9.0" rev="1.6.1"/>
+    <dependency org="junit" name="junit" rev="4.9"/>
+  </dependencies>
+</ivy-module>
