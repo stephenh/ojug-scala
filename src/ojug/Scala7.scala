@@ -4,19 +4,24 @@ import scala.collection.mutable.ArrayBuffer
 
 object Scala7 {
   def main(args: Array[String]) {
-    val oos = new ArrayBuffer[Any]()
-    oos += "string"
-    oos += 1
-    printAll(oos)
+    val listOfAnything = ArrayBuffer[Any]("string", 1)
+    printAll(listOfAnything)
+    addSomething(listOfAnything)
 
-    val strings = new ArrayBuffer[String]()
-    strings += "string2"
-    // printAll(strings)
-    // val oos2: ArrayBuffer[Any] = strings
-    // oos2 += 1
+    val strings = ArrayBuffer("string", "a")
+    // compile error because ArrayBuffer is mutable;
+    // would put a non-string into ArrayBuffer[String]
+    // addSomething(strings)
+    // this is okay, the Seq interface is immutable, so
+    // can't have/ non-strings put in to it
+    printAll(strings)
   }
 
-  private def printAll(o: ArrayBuffer[Any]) {
+  private def printAll(o: Seq[Any]) {
     o.foreach(println)
+  }
+
+  private def addSomething(o: ArrayBuffer[Any]) {
+    o += 1
   }
 }

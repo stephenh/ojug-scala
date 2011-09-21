@@ -7,13 +7,18 @@ import org.scalatest.matchers.ShouldMatchers
 class FooTest extends WordSpec with ShouldMatchers {
   "SomeComponent" when {
     "handling this sort of input" should {
-      val shared = "shared"
+      var input = "shared"
+
       "do the right thing" in {
-        val s = shared + "foo"
+        val s = input + "foo"
+        // this:
         s should be === "sharedfoo"
+        // is the same thing as:
+        s.should(be.===("sharedfoo"))
       }
+
       "do the right thing again" in {
-        val s = shared + "bar"
+        val s = input + "bar"
         s should be === "sharedbar"
       }
     }

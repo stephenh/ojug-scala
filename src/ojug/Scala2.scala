@@ -1,16 +1,21 @@
 package ojug
 
 class Scala2 {
-  val list = List.apply(1, 2, 3)
+  val list = List.apply("1", "2")
 
   def listForeach() {
-    list.foreach(new Function1[Int, Unit]() {
-      def apply(i: Int): Unit = {
+    list.foreach(new Function1[String, Unit]() {
+      def apply(i: String): Unit = {
         println(i)
       }
     })
-  }
 
+    // or:
+    list.foreach(i => println(i) )
+
+    // or:
+    list.foreach(println)
+  }
 }
 
 object Scala2 {

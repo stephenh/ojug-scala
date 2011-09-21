@@ -1,6 +1,9 @@
 package ojug
 
-case class EmployeeDto(id: Int, name: String)
+// equals, hashCode, cstr, getters, setters all done for you
+case class EmployeeDto(id: Int, name: String) {
+  def specialName = name.toUpperCase
+}
 
 class Scala5 {
   val employees = List(EmployeeDto(1, "bob"), EmployeeDto(2, "fred"))

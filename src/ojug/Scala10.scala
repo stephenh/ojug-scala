@@ -6,6 +6,7 @@ object Scala10 {
     case class Employee(id: Int, name: String) extends Person
     case class Employer(name: String) extends Person
 
+    // pattern matching again a class hierarchy. works great for ASTs.
     val people = List(Employee(1, "bob"), Employer("er1"), Employer("er2"))
     people.foreach { _ match {
       case Employee(id, _) => println("ee" + id)

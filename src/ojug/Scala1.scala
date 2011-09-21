@@ -1,15 +1,13 @@
 package ojug
 
-// var, methods, val
 class Scala1 {
-  var name: String = null
+  var name = "foo"
 
   def foo(name: String) = {
-    this.name = name
   }
 }
 
-object Scala1Client {
+object Scala1 {
   def main(args: Array[String]) {
     val one = new Scala1
     one.name = "blah"
