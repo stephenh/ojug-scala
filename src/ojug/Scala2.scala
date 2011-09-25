@@ -11,7 +11,10 @@ class Scala2 {
     })
 
     // or:
-    list.foreach(i => println(i) )
+    list.foreach((s: String) => println(s))
+
+    // or:
+    list.foreach(s => println(s))
 
     // or:
     list.foreach(println)
